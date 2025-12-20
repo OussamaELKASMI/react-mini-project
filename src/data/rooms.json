@@ -1,0 +1,58 @@
+[
+  {
+    "id": "R1",
+    "name": "Room A",
+    "capacity": 20,
+    "sizeM2": 35,
+    "equipment": ["Projector", "Whiteboard"]
+  },
+  { "id": "R2", "name": "Room B", "capacity": 12, "sizeM2": 22, "equipment": ["Whiteboard"] },
+  {
+    "id": "R3",
+    "name": "Room C",
+    "capacity": 30,
+    "sizeM2": 55,
+    "equipment": ["Projector", "Sound System"]
+  },
+  { "id": "R4", "name": "Room D", "capacity": 8, "sizeM2": 16, "equipment": ["TV Screen"] },
+
+  { "id": "R5", "name": "Room E", "capacity": 15, "sizeM2": 28, "equipment": ["Projector"] },
+  {
+    "id": "R6",
+    "name": "Room F",
+    "capacity": 25,
+    "sizeM2": 45,
+    "equipment": ["Projector", "Whiteboard", "TV Screen"]
+  },
+  {
+    "id": "R7",
+    "name": "Room G",
+    "capacity": 40,
+    "sizeM2": 80,
+    "equipment": ["Projector", "Sound System", "Whiteboard"]
+  },
+  { "id": "R8", "name": "Room H", "capacity": 10, "sizeM2": 18, "equipment": ["Whiteboard"] },
+
+  {
+    "id": "R9",
+    "name": "Room I",
+    "capacity": 18,
+    "sizeM2": 32,
+    "equipment": ["TV Screen", "Whiteboard"]
+  },
+  {
+    "id": "R10",
+    "name": "Room J",
+    "capacity": 22,
+    "sizeM2": 38,
+    "equipment": ["Projector", "TV Screen"]
+  },
+  {
+    "id": "R11",
+    "name": "Room K",
+    "capacity": 35,
+    "sizeM2": 65,
+    "equipment": ["Projector", "Sound System"]
+  },
+  { "id": "R12", "name": "Room L", "capacity": 6, "sizeM2": 12, "equipment": ["Whiteboard"] }
+]
