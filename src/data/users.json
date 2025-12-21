@@ -1,0 +1,5 @@
+[
+  { "id": "U1", "name": "Oussama", "email": "oussama@roomify.com", "password": "1234" },
+  { "id": "U2", "name": "Amine", "email": "amine@roomify.com", "password": "1234" },
+  { "id": "U3", "name": "Wadie", "email": "wadie@roomify.com", "password": "1234" }
+]

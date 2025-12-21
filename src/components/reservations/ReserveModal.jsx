@@ -79,13 +79,13 @@ export default function ReserveModal({ open, onClose, room, reservations = [], u
 
                 {availability === true && (
                   <p className="text-sm font-semibold text-green-700">
-                    ✅ Available for this time range.
+                    Available for this time range.
                   </p>
                 )}
 
                 {availability === false && (
                   <p className="text-sm font-semibold text-red-700">
-                    ❌ Not available (conflict with an existing reservation).
+                    Not available, please select another time.
                   </p>
                 )}
               </div>

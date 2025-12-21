@@ -16,7 +16,7 @@ export default function RoomCard({ room, onReserve }) {
         {room.equipment?.map((item) => (
           <span
             key={item}
-            className="rounded-full bg-ter px-3 py-1 text-xs font-medium text-slate-700"
+            className="rounded-full bg-sec/30 px-3 py-1 text-xs font-medium text-slate-700"
           >
             {item}
           </span>

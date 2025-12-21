@@ -4,7 +4,6 @@ export default function Pagination({ page, totalPages, onPageChange }) {
   const canPrev = page > 1;
   const canNext = page < totalPages;
 
-  // simple page window (max 5 buttons)
   const start = Math.max(1, page - 2);
   const end = Math.min(totalPages, start + 4);
 
@@ -19,7 +18,7 @@ export default function Pagination({ page, totalPages, onPageChange }) {
         className={[
           'rounded-lg px-3 py-2 text-sm font-medium transition',
           canPrev
-            ? 'bg-ter hover:opacity-90 text-slate-800'
+            ? 'bg-sec/30 hover:opacity-90 text-slate-800'
             : 'bg-slate-200 text-slate-500 cursor-not-allowed',
         ].join(' ')}
       >
@@ -35,7 +34,7 @@ export default function Pagination({ page, totalPages, onPageChange }) {
               'h-9 w-9 rounded-lg text-sm font-semibold transition',
               p === page
                 ? 'bg-sec text-slate-800'
-                : 'bg-white border border-black/10 hover:bg-ter/40 text-slate-700',
+                : 'bg-white border border-black/10 hover:bg-sec/30/40 text-slate-700',
             ].join(' ')}
             aria-current={p === page ? 'page' : undefined}
           >

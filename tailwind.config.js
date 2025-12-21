@@ -10,9 +10,8 @@ module.exports = {
         xl: '1280px',
       },
       colors: {
-        prim: '#F9F8F6', // primary
-        sec: '#D9CFC7', // secondary
-        ter: '#EFE9E3', // soft
+        prim: '#F8FAFC', // primary
+        sec: '#BCCCDC', // secondary
       },
     },
   },
