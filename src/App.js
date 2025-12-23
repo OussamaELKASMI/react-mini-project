@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TopBar from 'components/layout/TopBar';
 import RoomList from 'components/rooms/RoomList';
 import ReserveModal from 'components/reservations/ReserveModal';
@@ -18,21 +18,13 @@ export default function App() {
   const [reservations, setReservations] = useState([]);
   const [page, setPage] = useState('rooms');
 
-  // auth user
   const [user, setUser] = useState(null);
 
-  // load reservations & user
   useEffect(() => {
     setReservations(loadReservations());
     setUser(loadAuthUser());
   }, []);
 
-  const myReservations = useMemo(() => {
-    if (!user) return [];
-    return reservations.filter((r) => r.userId === user.id);
-  }, [reservations, user]);
-
-  // If not logged in, show login page only
   if (!user) {
     return (
       <div className="min-h-screen">
@@ -63,7 +55,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-prim/40">
       <TopBar
         {...{ page }}
         onRooms={() => setPage('rooms')}
@@ -77,7 +69,7 @@ export default function App() {
         }}
       />
 
-      <main className="mx-auto max-w-6xl px-4 py-6">
+      <main className="mx-auto max-w-6xl px-4 py-3">
         {page === 'rooms' && (
           <RoomList
             onReserve={(room) => {
@@ -87,8 +79,29 @@ export default function App() {
           />
         )}
 
-        {/* show reservations */}
-        {page === 'reservations' && <MyReservations reservations={myReservations} />}
+        {page === 'reservations' && (
+          <MyReservations
+            reservations={reservations}
+            onCancel={(id) => {
+              const now = new Date();
+
+              const reservation = reservations.find((r) => r.id === id);
+              if (!reservation) return;
+
+              const startDate = new Date(reservation.start);
+
+              if (startDate <= now) {
+                toast.error('You cannot cancel a reservation that has already started.');
+                return;
+              }
+
+              const updated = reservations.filter((r) => r.id !== id);
+              setReservations(updated);
+              saveReservations(updated);
+              toast.success('Reservation cancelled.');
+            }}
+          />
+        )}
       </main>
 
       <ReserveModal

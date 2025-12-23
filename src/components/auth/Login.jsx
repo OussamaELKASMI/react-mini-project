@@ -36,7 +36,7 @@ export default function LoginPage({ onLogin }) {
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               className="mt-1 w-full rounded-md bg-transparent border border-sec px-3 py-2 text-sm outline-none"
-              placeholder="oussama@roomify.com"
+              placeholder="email@roomify.com"
               required
             />
           </div>

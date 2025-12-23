@@ -20,15 +20,13 @@ export default function RoomList({ onReserve }) {
 
   return (
     <section id="rooms" className="space-y-4">
-      {/* Title + hint */}
       <div>
-        <h2 className="text-xl font-semibold text-slate-800">Rooms</h2>
+        <h2 className="text-2xl font-semibold text-slate-800">Rooms</h2>
         <p className="text-sm text-slate-600">
           Choose a room, then select a date range to check availability.
         </p>
       </div>
 
-      {/* Meta line */}
       <div className="flex items-center justify-between text-sm text-slate-600">
         <span>
           Showing <span className="font-medium">{showingFrom}</span>–
@@ -42,19 +40,13 @@ export default function RoomList({ onReserve }) {
         </span>
       </div>
 
-      {/* Grid */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {pageRooms.map((room) => (
           <RoomCard key={room.id} room={room} onReserve={onReserve} />
         ))}
       </div>
 
-      {/* Pagination */}
-      <Pagination
-        page={page}
-        totalPages={totalPages}
-        onPageChange={(p) => setPage(Math.max(1, Math.min(totalPages, p)))}
-      />
+      <Pagination page={page} totalPages={totalPages} onPageChange={(p) => setPage(p)} />
     </section>
   );
 }

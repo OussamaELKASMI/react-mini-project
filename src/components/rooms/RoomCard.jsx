@@ -1,6 +1,6 @@
 export default function RoomCard({ room, onReserve }) {
   return (
-    <div className="rounded-md border border-black/5 bg-prim p-4 shadow-sm">
+    <div className="rounded-md border border-black/5 bg-prim p-4 shadow-sm transition-all duration-200 cursor-default">
       <h3 className="text-lg font-semibold text-slate-800">{room.name}</h3>
 
       <div className="mt-2 text-sm text-slate-600 space-y-1">
@@ -25,7 +25,7 @@ export default function RoomCard({ room, onReserve }) {
 
       <button
         onClick={() => onReserve?.(room)}
-        className="mt-4 w-full rounded-md bg-sec px-4 py-2 text-sm font-medium text-slate-800 hover:opacity-85 transition"
+        className="mt-4 flex ml-auto rounded-md bg-sec/80 px-4 py-2 text-sm font-medium text-slate-800 border border-sec shadow-sm hover:bg-transparent transition-all duration-200"
       >
         Reserve
       </button>

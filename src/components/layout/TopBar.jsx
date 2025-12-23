@@ -9,7 +9,6 @@ export default function TopBar({ page, onRooms, onReservations, user, onLogin, o
     <header className="sticky top-0 z-50 bg-prim border-b border-black/5">
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Brand */}
           <button
             type="button"
             className="flex items-center gap-2 font-semibold tracking-wide"
@@ -18,9 +17,7 @@ export default function TopBar({ page, onRooms, onReservations, user, onLogin, o
               closeMenu();
             }}
           >
-            <div className="w-[7.5rem]">
-              <img src="/assets/Logo.png" alt="Roomify" />
-            </div>
+            Roomify
           </button>
 
           {/* Desktop navigation */}
@@ -45,10 +42,9 @@ export default function TopBar({ page, onRooms, onReservations, user, onLogin, o
               Reservations
             </button>
 
-            {/* Auth area */}
             {!user ? (
               <button
-                className="ml-2 px-3 py-2 rounded-md bg-sec hover:opacity-85 transition"
+                className="ml-2 px-3 py-2 rounded-md hover:bg-sec transition"
                 onClick={onLogin}
               >
                 Login
@@ -95,7 +91,7 @@ export default function TopBar({ page, onRooms, onReservations, user, onLogin, o
             <div className="rounded-md p-2 space-y-1">
               <button
                 className={`w-full text-left px-3 py-2 rounded-md ${
-                  page === 'rooms' ? 'bg-sec' : ''
+                  page === 'rooms' ? 'bg-sec/80' : ''
                 } transition`}
                 onClick={() => {
                   onRooms?.();
@@ -107,7 +103,7 @@ export default function TopBar({ page, onRooms, onReservations, user, onLogin, o
 
               <button
                 className={`w-full text-left px-3 py-2 rounded-md ${
-                  page === 'reservations' ? 'bg-sec' : ''
+                  page === 'reservations' ? 'bg-sec/80' : ''
                 } transition ${!user ? 'opacity-60 cursor-not-allowed' : ''}`}
                 onClick={() => {
                   if (!user) return;
@@ -121,7 +117,7 @@ export default function TopBar({ page, onRooms, onReservations, user, onLogin, o
               <div className="pt-2 border-t border-black/10">
                 {!user ? (
                   <button
-                    className="w-full text-left px-3 py-2 rounded-md bg-sec hover:opacity-85 transition"
+                    className="w-full text-left px-3 py-2 rounded-md hover:bg-sec transition"
                     onClick={() => {
                       onLogin?.();
                       closeMenu();
